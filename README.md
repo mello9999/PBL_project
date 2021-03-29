@@ -32,7 +32,7 @@ Tools :
 
   
 # Built With 
-- [] Azure app service ในการ Deploy ขึ้น cloud server  
+- [X] Azure app service ในการ Deploy ขึ้น cloud server  
   
 # Versioning 
   
