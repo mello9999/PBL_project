@@ -13,18 +13,15 @@ Member in team : 'PFuzesangluis team'
 # Project Description 
 
 
-#### Proposal Project
-
-
 # Product Perspective
 
 
-# Installation and Setup Instructions
-- [X] Clone down this repository. 
+# Data Pipeline 
 
-# Running the tests 
 
-  
+# Data model 
+
+
 # Deployment  
 Tools : 
 - [X] Azure PostgreSQL 
@@ -34,5 +31,4 @@ Tools :
 # Built With 
 - [X] Azure app service ในการ Deploy ขึ้น cloud server  
   
-# Versioning 
   
