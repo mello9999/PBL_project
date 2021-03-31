@@ -10,14 +10,15 @@ Member in team : 'PFuzesangluis team'
 > * :man: Ms.Rungwigrai Payakkanuwat 61070507219
 > * :man: Ms.Prakasit Chaiphet 61070507230
 
+<img align="left" height="325" width="425" alt="" src="Conceptual design/description.png" />
+
 # Project Description 
-Dashboard for Monitoring and Signaling Elder’s Heart Disease is a tool used for display important information about elder’s activities and heart disease risk. 
+> Dashboard for Monitoring and Signaling Elder’s Heart Disease is a tool used for display important information about elder’s activities and heart disease risk. 
 
-Using data visualization, dashboard uniquely communicate metrics visually to help users understand complex relationships in elder’s activities data. 
+> Using data visualization, dashboard uniquely communicate metrics visually to help users understand complex relationships in elder’s activities data. 
 
-Machine learning is used to measure elder’s heart disease risk, send this information to display on the dashboard.  
-
-
+> Machine learning is used to measure elder’s heart disease risk, send this information to display on the dashboard.  
+  
 # Data Pipeline 
 <p align="center"><img src="Conceptual design/Data Pipeline.png" width=500 height=400 ></p>
 
