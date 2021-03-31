@@ -1,6 +1,6 @@
 # PBL_project
-โปรเจ็คนี้เป็นส่วนหนึ่งของรายวิชา CPE391 Problem base learning 
-จัดทำโดย นักศึกษาวิศวกรรมคอมพิวเตอร์ ชั้นปี 3 มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+This project is part of the CPE391 Problem base learning course.
+Prepared by 3rd year Computer Engineering Student, King Mongkut's University of Technology Thonburi. 
 
 ### Developer Team
 Member in team : 'PFuzesangluis team' 
@@ -11,24 +11,27 @@ Member in team : 'PFuzesangluis team'
 > * :man: Ms.Prakasit Chaiphet 61070507230
 
 # Project Description 
+Dashboard for Monitoring and Signaling Elder’s Heart Disease is a tool used for display important information about elder’s activities and heart disease risk. 
 
+Using data visualization, dashboard uniquely communicate metrics visually to help users understand complex relationships in elder’s activities data. 
 
-# Product Perspective
+Machine learning is used to measure elder’s heart disease risk, send this information to display on the dashboard.  
 
 
 # Data Pipeline 
+<p align="center"><img src="Conceptual design/Data Pipeline.png" width=500 height=400 ></p>
 
-
-# Data model 
-
+# Data Model 
+<p align="center"><img src="Conceptual design/Data model.png" width=500 height=400 ></p>
 
 # Deployment  
 Tools : 
-- [X] Azure PostgreSQL 
-- [X] Azure app service 
+- [X] Azure App Service
+- [X] Docker 
 
   
 # Built With 
-- [X] Azure app service ในการ Deploy ขึ้น cloud server  
+- [X] Azure app service used to Deploy to cloud server  
+- [X] Power BI used to Virtualization dashboard 
   
   
