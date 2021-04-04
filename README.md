@@ -15,9 +15,7 @@ Member in team : 'PFuzesangluis team'
 # Project Description 
 :heart: Dashboard for Monitoring and Signaling Elder’s Heart Disease is a tool used for display important information about elder’s activities and heart disease risk. 
 
-:yellow_heart: Using data visualization, dashboard uniquely communicate metrics visually to help users understand complex relationships in elder’s activities data. 
-
-:green_heart: Machine learning is used to measure elder’s heart disease risk, send this information to display on the dashboard.  
+:yellow_heart: Using data visualization, dashboard uniquely communicate metrics visually to help users understand complex relationships in elder’s activities data.:green_heart: Machine learning is used to measure elder’s heart disease risk, send this information to display on the dashboard.  
   
 # Data Pipeline 
 <p align="center"><img src="Conceptual design/Data Pipeline.png" width=500 height=400 ></p>
