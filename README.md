@@ -27,7 +27,7 @@ Member in team : 'PFuzesangluis team'
 
 # Virtualization 
 ### Demo Dashboard in Power Bi 
-<p align="center"><img src="System design/demo.PNG" width=600 height=400 ></p>
+<p align="center"><img src="System design/demo.PNG" width=800 height=500 ></p>
 
 ### Dashboard in project   
 :globe_with_meridians: :desktop_computer: Link to dashboard : ``` ...coming soon... ``` :heart::yellow_heart::green_heart:
