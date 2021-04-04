@@ -2,7 +2,7 @@
 This project is part of the CPE391 Problem base learning course.
 Prepared by 3rd year Computer Engineering Student, King Mongkut's University of Technology Thonburi. 
 
-<img align="right" height="250" width="250" alt="logo" src="Conceptual design/Dr.Fuze.png" />
+<img align="right" height="220" width="250" alt="logo" src="Conceptual design/Dr.Fuze.png" />
 
 ### Developer Team
 Member in team : 'PFuzesangluis team' 
