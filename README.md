@@ -32,7 +32,7 @@ Member in team : 'PFuzesangluis team'
 ### Dashboard in project  
 <p align="center"> ... coming soon ... </p>
 
-:globe_with_meridians: :desktop_computer: Link to dashboard : ``` ...coming soon... ``` :heart::yellow_heart::green_heart:
+> :globe_with_meridians: :desktop_computer: Link to dashboard : ``` ...coming soon... ``` :heart::yellow_heart::green_heart:
 
 # Deployment  
 Tools : 
