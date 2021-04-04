@@ -30,7 +30,8 @@ Member in team : 'PFuzesangluis team'
 <p align="center"><img src="System design/demo.PNG" width=800 height=500 ></p>
 
 ### Dashboard in project  
-<p align="center"> <h2> ... coming soon ... </h2> </p>
+<p align="center"> ... coming soon ... </p>
+
 :globe_with_meridians: :desktop_computer: Link to dashboard : ``` ...coming soon... ``` :heart::yellow_heart::green_heart:
 
 # Deployment  
