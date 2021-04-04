@@ -26,9 +26,6 @@ Member in team : 'PFuzesangluis team'
 <p align="center"><img src="Conceptual design/Data model.png" width=500 height=400 ></p>
 
 # Virtualization 
-### Demo Dashboard in Power Bi 
-<p align="center"><img src="System design/demo.PNG" width=800 height=500 ></p>
-
 ### Dashboard in project  
 <p align="center"> ... coming soon ... </p>
 
