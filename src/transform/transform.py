@@ -103,8 +103,18 @@ blood_info = pd.merge(bi_sphy, bi_ir_04, on='SubjectID', how='left')
 
 disease_info = ev_05[['SubjectID', 'Arrhythmia', 'Diabetes mellitus']]
 
+pe_sa_01 = sa_01[['SubjectID', 'Age', 'Gender', 'Height', 'Body weight', 'Smoking', 'Drinking', ]]
+pe_weight = weight[['SubjectID', ' Measure Date Time', ' BMI', ' Body Age']]
+person = pd.merge(pe_weight, pe_sa_01, on='SubjectID', how='left')
+
+sl_activ = activ[['SubjectID', ' Measure Date Time', ' Sleep Hour', ' Sleep Minute']]
+sl_li_02 = li_02[['SubjectID', 'Sleep Questionnaire results']]
+sleep_info = pd.merge(sl_activ, sl_li_02, on='SubjectID', how='left')
+
 time_info = activ[[' Measure Date Time']]
-time_info = time_info.append([exist[[' Measure Date Time']], sphy[[' Measure Date Time']]])
+time_info = time_info.append([exist[[' Measure Date Time']], sphy[[' Measure Date Time']], \
+            sleep_info[[' Measure Date Time']], person[[' Measure Date Time']], internal_health_info[[' Measure Date Time']], \
+            blood_info[[' Measure Date Time']]])
 time_info = time_info.drop_duplicates(subset=[' Measure Date Time']).reset_index(drop=True)
 time_info['year'] = pd.to_datetime(time_info[' Measure Date Time']).dt.year
 time_info['month'] = pd.to_datetime(time_info[' Measure Date Time']).dt.month
@@ -114,14 +124,6 @@ time_info['weekday'] = pd.to_datetime(time_info[' Measure Date Time']).dt.weekda
 time_info['hour'] = pd.to_datetime(time_info[' Measure Date Time']).dt.hour
 time_info['minute'] = pd.to_datetime(time_info[' Measure Date Time']).dt.minute
 time_info['second'] = pd.to_datetime(time_info[' Measure Date Time']).dt.second
-
-pe_sa_01 = sa_01[['SubjectID', 'Age', 'Gender', 'Height', 'Body weight', 'Smoking', 'Drinking', ]]
-pe_weight = weight[['SubjectID', ' Measure Date Time', ' BMI', ' Body Age']]
-person = pd.merge(pe_weight, pe_sa_01, on='SubjectID', how='left')
-
-sl_activ = activ[['SubjectID', ' Measure Date Time', ' Sleep Hour', ' Sleep Minute']]
-sl_li_02 = li_02[['SubjectID', 'Sleep Questionnaire results']]
-sleep_info = pd.merge(sl_activ, sl_li_02, on='SubjectID', how='left')
 
 behavior.to_csv('../../data/star_schema/behavior.csv', index=False)
 sleep_info.to_csv('../../data/star_schema/sleep_info.csv', index=False)
