@@ -44,8 +44,11 @@ for i in f:
   b = find_nth(c, '_', 2)
   s.add(c[a+1:b])
 
-for d in s:
-  exec(d + " = pd.DataFrame()")
+activ = pd.DataFrame()
+exist = pd.DataFrame()
+sphy = pd.DataFrame()
+temp = pd.DataFrame()
+weight = pd.DataFrame()
 
 for file in f:
   c = file[63:]
