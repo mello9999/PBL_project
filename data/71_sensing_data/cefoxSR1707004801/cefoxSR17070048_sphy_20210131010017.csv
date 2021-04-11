@@ -1,0 +1,2 @@
+Device, SerialNo, Battery Level, Measure Date Time, Systolic Pressure, Diastolic Pressure, Mean Arterial Pressure, Pulse Rate, Irregular Pulse Flag, Pulse Rate Range Detection Flag
+B7F3049A-D631-4C89-A1C8-3D38E31FA260, 5171200041, 100, 2021-01-30T07:50:13, 150, 76, 118, 57, false, 0

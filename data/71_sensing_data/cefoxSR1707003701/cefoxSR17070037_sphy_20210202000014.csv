@@ -1,0 +1,4 @@
+Device, SerialNo, Battery Level, Measure Date Time, Systolic Pressure, Diastolic Pressure, Mean Arterial Pressure, Pulse Rate, Irregular Pulse Flag, Pulse Rate Range Detection Flag
+999B2055-424D-FF5A-0046-12A5DCC8815A, 5171200976, 100, 2021-01-31T20:28:16, 139, 80, 108, 62, false, 0
+999B2055-424D-FF5A-0046-12A5DCC8815A, 5171200976, 100, 2021-02-01T07:04:22, 139, 79, 110, 45, false, 0
+999B2055-424D-FF5A-0046-12A5DCC8815A, 5171200976, 100, 2021-02-01T07:09:58, 133, 84, 118, 48, false, 0

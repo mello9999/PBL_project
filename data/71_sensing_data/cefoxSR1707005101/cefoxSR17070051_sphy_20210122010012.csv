@@ -1,0 +1,4 @@
+Device, SerialNo, Battery Level, Measure Date Time, Systolic Pressure, Diastolic Pressure, Mean Arterial Pressure, Pulse Rate, Irregular Pulse Flag, Pulse Rate Range Detection Flag
+25120CEB-2BD3-42BE-A8A1-C7C40888CD95, 5171200190, 100, 2021-01-21T15:33:10, 92, 68, 82, 75, false, 0
+25120CEB-2BD3-42BE-A8A1-C7C40888CD95, 5171200190, 100, 2021-01-21T15:34:54, 106, 64, 84, 70, false, 0
+25120CEB-2BD3-42BE-A8A1-C7C40888CD95, 5171200190, 100, 2021-01-21T21:31:21, 140, 80, 111, 69, false, 0

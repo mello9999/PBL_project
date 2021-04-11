@@ -39,22 +39,18 @@ def find_nth(haystack, needle, n):
     return start
 s = set()
 for i in f:
-  c = i[63:]
+  c = i[45:]
   a = find_nth(c, '_', 1)
   b = find_nth(c, '_', 2)
   s.add(c[a+1:b])
 
-activ = pd.DataFrame()
-exist = pd.DataFrame()
-sphy = pd.DataFrame()
-temp = pd.DataFrame()
-weight = pd.DataFrame()
+for d in s:
+  exec(d + " = pd.DataFrame()")
 
 for file in f:
-  c = file[63:]
+  c = file[45:]
   a = find_nth(c, '_', 1)
   b = find_nth(c[a+1:], '_', 1)
-  
   if c[a+1:a+b+1] == 'activ':
     tem = pd.read_csv(file)
     tem['SubjectID'] = c[:a]
@@ -127,11 +123,11 @@ sl_activ = activ[['SubjectID', ' Measure Date Time', ' Sleep Hour', ' Sleep Minu
 sl_li_02 = li_02[['SubjectID', 'Sleep Questionnaire results']]
 sleep_info = pd.merge(sl_activ, sl_li_02, on='SubjectID', how='left')
 
-behavior.to_csv('../../data/behavior.csv', index=False)
-sleep_info.to_csv('../../data/sleep_info.csv', index=False)
-medicine_info.to_csv('../../data/medicine_info.csv', index=False)
-internal_health_info.to_csv('../../data/internal_health_info.csv', index=False)
-blood_info.to_csv('../../data/blood_info.csv', index=False)
-disease_info.to_csv('../../data/disease_info.csv', index=False)
-time_info.to_csv('../../data/time_info.csv', index=False)
-person.to_csv('../../data/person.csv', index=False)
+behavior.to_csv('../../data/star_schema/behavior.csv', index=False)
+sleep_info.to_csv('../../data/star_schema/sleep_info.csv', index=False)
+medicine_info.to_csv('../../data/star_schema/medicine_info.csv', index=False)
+internal_health_info.to_csv('../../data/star_schema/internal_health_info.csv', index=False)
+blood_info.to_csv('../../data/star_schema/blood_info.csv', index=False)
+disease_info.to_csv('../../data/star_schema/disease_info.csv', index=False)
+time_info.to_csv('../../data/star_schema/time_info.csv', index=False)
+person.to_csv('../../data/star_schema/person.csv', index=False)
