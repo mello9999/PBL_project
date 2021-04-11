@@ -16,7 +16,7 @@ ir_04.columns = ir_04_header
 ir_04 = ir_04[ir_04['SubjectID'].notna()].reset_index(drop=True)
 
 
-ev_05 = pd.read_csv('/content/gdrive/MyDrive/data/05_evaluation.csv', header=None)
+ev_05 = pd.read_csv('../../data/05_evaluation.csv', header=None)
 ev_05.columns = ev_05_header
 ev_05 = ev_05[ev_05['SubjectID'].notna()].reset_index(drop=True)
 
