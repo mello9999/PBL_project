@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import pandas as pd 
+import pickle
 
 from sklearn.ensemble import IsolationForest
 from sklearn.neighbors import LocalOutlierFactor
@@ -195,6 +196,7 @@ data_scaled_means = data_scaled.drop([' Measure Date Time'], axis = 1).groupby('
 ilf = IsolationForest().fit(data_scaled_means)
 answerIF_proba = abs(ilf.score_samples(data_scaled_means))
 answerIF_proba = pd.DataFrame({'target' : answerIF_proba})
+pickle.dump(ilf, open( "../../data/model/IsolationForest", "wb" ) )
 
 ## Local Outlier Factor
 
@@ -203,6 +205,7 @@ lof.fit(data_scaled_means)
 answerLOF_proba = lof.decision_function(data_scaled_means)
 answerLOF_proba = 1 - ((answerLOF_proba - answerLOF_proba.min()) / (answerLOF_proba.max() - answerLOF_proba.min())) 
 answerLOF_proba = pd.DataFrame({'target' : answerLOF_proba})
+pickle.dump(lof, open( "../../data/model/LocalOutlierFactor", "wb" ) )
 
 ## Elliptic Envelope
 
@@ -211,6 +214,7 @@ ee.fit(data_scaled_means)
 answerEE_proba = ee.decision_function(data_scaled_means)
 answerEE_proba = 1 - (answerEE_proba - 3 * answerEE_proba.min()) * 10 ** 12
 answerEE_proba = pd.DataFrame({'target' : answerEE_proba})
+pickle.dump(ee, open( "../../data/model/EllipticEnvelope", "wb" ) )
 
 ##############
 
