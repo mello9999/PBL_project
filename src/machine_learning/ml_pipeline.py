@@ -13,6 +13,19 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 
+def cholesterol(x):
+  if x == '\xad':
+    return np.nan
+  if not isinstance(x, float):
+    return float(x.strip())
+  return x
+  
+def checkNotNan(x):
+  if isinstance(x, float):
+    return not math.isnan(x)
+  return True
+
+
 ### Read data
 
 behavior = pd.read_csv('../../data/star_schema/behavior.csv')
@@ -55,6 +68,68 @@ star_data = pd.merge(star_6, behavior, on=['SubjectID'],  how='left')
 
 ##############
 
+
+### Drop unuse data
+
+no_use_columns = ['Arrhythmia', 'Antidepressant', 'Smoking', 'Inspection date', ' Pulse Rate Range Detection Flag', 
+                  'No weight loss of more than 2-3 kg in the last 6 months', 'No weight gain of more than 2-3 kg in the last 2 months',
+                  ' Sleep Minute', 'year', 'month', 'day', 'week', 'weekday', 'hour', 'minute', 'second']
+star_data = star_data.drop(columns=no_use_columns)
+
+##############
+
+
+### Clean data
+
+star_data['Age'] = star_data['Age'].fillna(star_data['Age'].mean())
+star_data['Gender'] = star_data['Gender'].fillna(star_data['Gender'][star_data['Gender'].apply(checkNotNan)].mode().values[0])   
+star_data['Height'] = star_data['Height'].fillna(star_data['Height'].mean())                    
+star_data['Body weight'] = star_data['Body weight'].fillna(star_data['Body weight'].mean())
+star_data['Drinking'] = star_data['Drinking'].fillna(star_data['Drinking'][star_data['Drinking'].apply(checkNotNan)].mode().values[0])      
+star_data[' Sleep Hour'] = star_data[' Sleep Hour'].fillna(star_data[' Sleep Hour'].median())    
+star_data['Antihypertensive'] = star_data['Antihypertensive'].fillna('None') 
+star_data['Antidiabetic drug'] = star_data['Antidiabetic drug'].fillna('None')              
+star_data['Osteoporosis drug'] = star_data['Osteoporosis drug'].fillna('None')     
+star_data['Total cholesterol'] = star_data['Total cholesterol'].apply(cholesterol)             
+star_data['Total cholesterol'] = star_data['Total cholesterol'].fillna(star_data['Total cholesterol'].mean())
+star_data['LDL cholesterol'] = star_data['LDL cholesterol'].apply(cholesterol)             
+star_data['LDL cholesterol'] = star_data['LDL cholesterol'].fillna(star_data['LDL cholesterol'].mean())
+star_data['HDL cholesterol'] = star_data['HDL cholesterol'].apply(cholesterol)             
+star_data['HDL cholesterol'] = star_data['HDL cholesterol'].fillna(star_data['HDL cholesterol'].mean())               
+star_data['HbA1c'] = star_data['HbA1c'].apply(cholesterol)             
+star_data['HbA1c'] = star_data['HbA1c'].fillna(star_data['HbA1c'].mean())
+star_data['AST'] = star_data['AST'].apply(cholesterol)             
+star_data['AST'] = star_data['AST'].fillna(star_data['AST'].mean())      
+star_data['ALT'] = star_data['ALT'].apply(cholesterol)             
+star_data['ALT'] = star_data['ALT'].fillna(star_data['ALT'].mean())
+star_data['LDH'] = star_data['LDH'].apply(cholesterol)             
+star_data['LDH'] = star_data['LDH'].fillna(star_data['LDH'].mean())     
+star_data['Na'] = star_data['Na'].apply(cholesterol)             
+star_data['Na'] = star_data['Na'].fillna(star_data['Na'].mean())     
+star_data['K'] = star_data['K'].apply(cholesterol)             
+star_data['K'] = star_data['K'].fillna(star_data['K'].mean())
+star_data['Diabetes mellitus'] = star_data['Diabetes mellitus'].fillna(star_data['Diabetes mellitus'][star_data['Diabetes mellitus'].apply(checkNotNan)].mode().values[0]) 
+star_data[' Systolic Pressure'] = star_data[' Systolic Pressure'].fillna(star_data[' Systolic Pressure'].mean()) 
+star_data[' Diastolic Pressure'] = star_data[' Diastolic Pressure'].fillna(star_data[' Diastolic Pressure'].mean())   
+star_data[' Mean Arterial Pressure'] = star_data[' Mean Arterial Pressure'].fillna(star_data[' Mean Arterial Pressure'].mean())              
+star_data[' Pulse Rate'] = star_data[' Pulse Rate'].fillna(star_data[' Pulse Rate'].mean())              
+star_data[' Irregular Pulse Flag'] = star_data[' Irregular Pulse Flag'].fillna(star_data[' Irregular Pulse Flag'][star_data[' Irregular Pulse Flag'].apply(checkNotNan)].mode().values[0])                
+star_data['Blood sugar'] = star_data['Blood sugar'].fillna(star_data['Blood sugar'].mean())    
+star_data['Appetite Questionnaire results'] = star_data['Appetite Questionnaire results'].fillna('None')                        
+star_data['Preference Questionnaire results'] = star_data['Preference Questionnaire results'].fillna('None') 
+star_data['Sleep Questionnaire results'] = star_data['Sleep Questionnaire results'].fillna('None')     
+star_data['Anxiety about health Questionnaire results'] = star_data['Anxiety about health Questionnaire results'].fillna('None')
+star_data['I can go up and down stairs without being transmitted to the railing or wall'] = star_data['I can go up and down stairs without being transmitted to the railing or wall'].fillna('None') 
+star_data['I can walk for more than 15 minutes'] = star_data['I can walk for more than 15 minutes'].fillna('no')    
+star_data['I am actively going out'] = star_data['I am actively going out'].fillna('no') 
+star_data['Do the cleaning and washing yourself'] = star_data['Do the cleaning and washing yourself'].fillna('no')    
+star_data['Shop for daily necessities yourself'] = star_data['Shop for daily necessities yourself'].fillna('no')   
+star_data['Exercise function'] = star_data['Exercise function'].fillna('None') 
+star_data['Nutrition'] = star_data['Nutrition'].fillna('None') 
+
+##############
+
+
 ### Dummies
 
 star_data_dummied = pd.concat([star_data, pd.get_dummies(star_data['Gender'], prefix='Gender')], axis=1)
@@ -93,7 +168,6 @@ star_data_dummied = pd.concat([star_data_dummied, pd.get_dummies(star_data['Exer
 star_data_dummied = star_data_dummied.drop(['Exercise function'], axis=1)
 star_data_dummied = pd.concat([star_data_dummied, pd.get_dummies(star_data['Nutrition'], prefix='Nutrition')], axis=1)
 star_data_dummied = star_data_dummied.drop(['Nutrition'], axis=1)
-star_data_dummied
 
 ##############
 
@@ -102,7 +176,7 @@ star_data_dummied
 
 data_scaled = star_data_dummied.copy()
 scaler = StandardScaler()
-scaler.fit(star_data_dummied[data_scaled.columns[2:24]])
+scaler.fit(data_scaled[data_scaled.columns[2:24]])
 data_scaled[data_scaled.columns[2:24]] = scaler.transform(data_scaled[data_scaled.columns[2:24]])
 
 ##############
