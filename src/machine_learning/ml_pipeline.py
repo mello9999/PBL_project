@@ -186,7 +186,7 @@ data_scaled[data_scaled.columns[2:24]] = scaler.transform(data_scaled[data_scale
 ### Group time
 
 data_scaled_means = data_scaled.drop([' Measure Date Time'], axis = 1).groupby('SubjectID').mean()
-
+data_scaled_means.to_csv("../../data/data_scaled_means.csv", index=False)
 ##############
 
 
