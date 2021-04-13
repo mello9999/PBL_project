@@ -27,9 +27,9 @@ Member in team : 'PFuzesangluis team'
 
 # Virtualization 
 ### Dashboard in project  
-<p align="center"><img src="System design/dashboard.png" alt="dashboard" width=800 height=500 ></p>
+<p align="center"><img src="System design/dashboard.png" alt="dashboard" width=1140 height=541.25 ></p>
 
-> :globe_with_meridians: :desktop_computer: Link to dashboard : ``` https://app.powerbi.com/view?r=eyJrIjoiM2M2NTQwMzktOTBiOC00MTFiLWFmNmUtZTZkY2M4ZDE5NWVmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection ``` :heart::yellow_heart::green_heart:
+> :globe_with_meridians: :desktop_computer: [Dashboad] (https://app.powerbi.com/view?r=eyJrIjoiM2M2NTQwMzktOTBiOC00MTFiLWFmNmUtZTZkY2M4ZDE5NWVmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection):heart::yellow_heart::green_heart:
 
 # Tools in Project
 - [X] Azure App Service 
