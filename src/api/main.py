@@ -39,11 +39,9 @@ def predictor(*kwargs):
 
 app = FastAPI()
 
-
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
-
 
 @app.post("/predict/")
 async def predict(body: dict):
