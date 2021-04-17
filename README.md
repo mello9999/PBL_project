@@ -27,7 +27,7 @@ Member in team : 'PFuzesangluis team'
 
 # Virtualization 
 ### Dashboard in project  
-<p align="center"><img src="System design/dashboard.png" alt="dashboard" width=1200 height=600 ></p>
+<p align="center">.. coming soon ..</p>
 
 :globe_with_meridians: :desktop_computer:  [Dashboad in Power Bi](https://app.powerbi.com/view?r=eyJrIjoiM2M2NTQwMzktOTBiOC00MTFiLWFmNmUtZTZkY2M4ZDE5NWVmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  :heart::yellow_heart::green_heart:
 
