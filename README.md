@@ -34,8 +34,8 @@ Member in team : 'PFuzesangluis team'
 <p align="center"><img src="System design/dark_dashboard_ver0.0.2.png" width=800 height=500 ></p>
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
-- :white_heart: Light Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjZjIyMjgtM2FjNC00ZjBlLTg2NTUtY2E5N2NjMzZlMTc4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
-- :black_heart: Dark Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGM2ZjJjNTEtZjRjMC00NWI0LWFmZTgtNmQzODQzMzhhY2NhIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
+- :white_heart: Light Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjZjIyMjgtM2FjNC00ZjBlLTg2NTUtY2E5N2NjMzZlMTc4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
+- :black_heart: Dark Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGM2ZjJjNTEtZjRjMC00NWI0LWFmZTgtNmQzODQzMzhhY2NhIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
 
 # :gear: Tools in Project
 - [X] Azure App Service 
