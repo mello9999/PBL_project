@@ -27,10 +27,10 @@ Member in team : 'PFuzesangluis team'
 
 # :heartpulse::chart_with_upwards_trend: Vitualization
 ### Dashboard in project  
-## Light Theme :white_heart:
+#### :white_heart: Light Theme :white_heart:
 <p align="center">.. coming soon ..</p>
 
-## Dark Theme :black_heart:
+#### :black_heart: Dark Theme :black_heart:
 <p align="center">.. coming soon ..</p>
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
