@@ -29,7 +29,9 @@ Member in team : 'PFuzesangluis team'
 ### Dashboard in project  
 <p align="center">.. coming soon ..</p>
 
-:globe_with_meridians: :desktop_computer:  [Dashboad in Power Bi](https://app.powerbi.com/view?r=eyJrIjoiM2M2NTQwMzktOTBiOC00MTFiLWFmNmUtZTZkY2M4ZDE5NWVmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  :heart::yellow_heart::green_heart:
+### :globe_with_meridians: :desktop_computer: Link to Dashboard :heart::yellow_heart::green_heart:
+- Light Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjZjIyMjgtM2FjNC00ZjBlLTg2NTUtY2E5N2NjMzZlMTc4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
+- Dark Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiM2M2NTQwMzktOTBiOC00MTFiLWFmNmUtZTZkY2M4ZDE5NWVmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
 
 # Tools in Project
 - [X] Azure App Service 
