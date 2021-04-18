@@ -35,7 +35,7 @@ Member in team : 'PFuzesangluis team'
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
 - :white_heart: Light Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjZjIyMjgtM2FjNC00ZjBlLTg2NTUtY2E5N2NjMzZlMTc4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
-- :black_heart: Dark Theme :  [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGM2ZjJjNTEtZjRjMC00NWI0LWFmZTgtNmQzODQzMzhhY2NhIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
+- :black_heart: Dark Theme :  [View to Dashboard1](https://app.powerbi.com/reportEmbed?reportId=bc9fbd98-1b8e-490f-b2f3-1105a9e6a1bf&autoAuth=true&ctid=6f4432dc-20d2-441d-b1db-ac3380ba633d&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWVhc3QtYXNpYS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D)  
 
 # :gear: Tools in Project
 - [X] Azure App Service 
