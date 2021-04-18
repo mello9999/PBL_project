@@ -12,7 +12,7 @@ Member in team : 'PFuzesangluis team'
 > * :man: Ms.Rungwigrai Payakkanuwat 61070507219
 > * :man: Ms.Prakasit Chaiphet 61070507230
 
-<img align="left" height="200" width="300" alt="" src="Conceptual design/description.png" />
+<img align="left" height="200" width="300" alt="" src="logo/Light Logo.png" />
 
 # :memo: Project Description 
 :heart: Dashboard for Monitoring and Signaling Elder’s Heart Disease is a tool used for display important information about elder’s activities and heart disease risk. 
