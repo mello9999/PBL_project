@@ -179,6 +179,7 @@ data_scaled = star_data_dummied.copy()
 scaler = StandardScaler()
 scaler.fit(data_scaled[data_scaled.columns[2:24]])
 data_scaled[data_scaled.columns[2:24]] = scaler.transform(data_scaled[data_scaled.columns[2:24]])
+pickle.dump(scaler, open( "../../data/model/scaler", "wb" ) )
 
 ##############
 
