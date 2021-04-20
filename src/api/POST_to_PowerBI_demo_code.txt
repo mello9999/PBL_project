@@ -2,7 +2,7 @@ let
     url = "http://127.0.0.1:8000/predict/",
     body = "{
                 ""cefoxSR1601000701"": {
-                                            "" BMI"": 28.8,
+                                            "" BMI"": 28.5,
                                             "" Body Age"": 80,
                                             ""Age"": 77.0,
                                             ""Gender"": ""Female"",
@@ -13,8 +13,8 @@ let
                                             ""Antihypertensive"": ""None"",
                                             ""Osteoporosis drug"": ""None"",
                                             ""Antidiabetic drug"": ""None"",
-                                            "" Body Fat Percentage"": 39.8,
-                                            "" Basal Metabolism"": 1381.9312,
+                                            "" Body Fat Percentage"": 41.4,
+                                            "" Basal Metabolism"": 1363.7667,
                                             ""Total cholesterol"": 212.0,
                                             ""LDL cholesterol"": 123.0,
                                             ""HDL cholesterol"": 73.0,
@@ -25,10 +25,10 @@ let
                                             ""Na"": 143.0,
                                             ""K"": 4.5,
                                             ""Diabetes mellitus"": ""Nothing"",
-                                            "" Systolic Pressure"": 140.0,
-                                            "" Diastolic Pressure"": 84.0,
-                                            "" Mean Arterial Pressure"": 113.0,
-                                            "" Pulse Rate"": 70.0,
+                                            "" Systolic Pressure"": 122.0,
+                                            "" Diastolic Pressure"": 71.0,
+                                            "" Mean Arterial Pressure"": 96.0,
+                                            "" Pulse Rate"": 63.0,
                                             "" Irregular Pulse Flag"": "" false"",
                                             ""Blood sugar"": 88.0,
                                             ""Appetite Questionnaire results"": "" a lot"",
@@ -42,6 +42,48 @@ let
                                             ""Shop for daily necessities yourself"": ""yes"",
                                             ""Exercise function"": ""good"",
                                             ""Nutrition"": ""Observation required""
+                                        },
+                ""cefoxSR1601003501"": {
+                                            "" BMI"": 21.0,
+                                            "" Body Age"": 66,
+                                            ""Age"": 81.0,
+                                            ""Gender"": ""Man"",
+                                            ""Height"": 158.0,
+                                            ""Body weight"": 65.0,
+                                            ""Drinking"": ""yes"",
+                                            "" Sleep Hour"": 0.0,
+                                            ""Antihypertensive"": ""Olmesartan, Nifedipine"",
+                                            ""Osteoporosis drug"": ""None"",
+                                            ""Antidiabetic drug"": ""None"",
+                                            "" Body Fat Percentage"": 26.1,
+                                            "" Basal Metabolism"": 1292.782,
+                                            ""Total cholesterol"": ""None"",
+                                            ""LDL cholesterol"": ""None"",
+                                            ""HDL cholesterol"": ""None"",
+                                            ""HbA1c"": ""None"",
+                                            ""AST"": ""None"",
+                                            ""ALT"": ""None"",
+                                            ""LDH"": ""None"",
+                                            ""Na"": 147.0,
+                                            ""K"": 4.85,
+                                            ""Diabetes mellitus"": ""Nothing"",
+                                            "" Systolic Pressure"": ""None"",
+                                            "" Diastolic Pressure"": ""None"",
+                                            "" Mean Arterial Pressure"": ""None"",
+                                            "" Pulse Rate"": ""None"",
+                                            "" Irregular Pulse Flag"": ""None"",
+                                            ""Blood sugar"": ""None"",
+                                            ""Appetite Questionnaire results"": "" a lot"",
+                                            ""Preference Questionnaire results"": ""I like sweets"",
+                                            ""Sleep Questionnaire results"": ""Sleeping "",
+                                            ""Anxiety about health Questionnaire results"": ""a lot"",
+                                            ""I can go up and down stairs without being transmitted to the railing or wall"": ""yes"",
+                                            ""I can walk for more than 15 minutes"": ""yes"",
+                                            ""I am actively going out"": ""yes"",
+                                            ""Do the cleaning and washing yourself"": ""no"",
+                                            ""Shop for daily necessities yourself"": ""yes"",
+                                            ""Exercise function"": ""Observation required"",
+                                            ""Nutrition"": ""good""
                                         }
             }",
     Source = Json.Document(Web.Contents(url,
@@ -49,6 +91,9 @@ let
                                             Content = Text.ToBinary(body) 
                                     ]   
                                 )
-                            )
+                            ),
+    #"Converted to Table" = Record.ToTable(Source),
+    #"Extracted Values" = Table.TransformColumns(#"Converted to Table", {"Value", each Text.Combine(List.Transform(_, Text.From)), type text}),
+    #"Renamed Columns" = Table.RenameColumns(#"Extracted Values",{{"Name", "SubjectID"}, {"Value", "Risk"}})
 in
-    Source
+    #"Renamed Columns"
