@@ -219,7 +219,7 @@
                             "Drinking": "None",
                             " Sleep Hour": "None",
                             "Antihypertensive": "None",
-                            "Osteoporosis drug": "Eddy Roll Capsuleใ€Alendronic acid",
+                            "Osteoporosis drug": "Eddy Roll Capsule, Alendronic acid",
                             "Antidiabetic drug": "None",
                             " Body Fat Percentage": "36",
                             " Basal Metabolism": "1160.8508",
