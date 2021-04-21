@@ -43,7 +43,7 @@ let
                                             ""Exercise function"": ""good"",
                                             ""Nutrition"": ""Observation required""
                                         },
-                ""cefoxSR1601003701"": {
+                ""cefoxSR1707003701"": {
                                             "" BMI"": 22.3,
                                             "" Body Age"": 66,
                                             ""Age"": 73.0,
@@ -85,7 +85,7 @@ let
                                             ""Exercise function"": ""Observation required"",
                                             ""Nutrition"": ""Observation required""
                                         },
-                ""cefoxSR1601004301"": {
+                ""cefoxSR1707004301"": {
                                             "" BMI"": 21.9,
                                             "" Body Age"": 65,
                                             ""Age"": 73.0,

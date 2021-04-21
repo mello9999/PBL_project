@@ -7,7 +7,7 @@
                             "Height": 156.0,
                             "Body weight": 60.0,
                             "Drinking": "yes",
-                            " Sleep Hour": 0.0,
+                            " Sleep Hour": 4.416666667,
                             "Antihypertensive": "None",
                             "Osteoporosis drug": "None",
                             "Antidiabetic drug": "None",
@@ -41,7 +41,7 @@
                             "Exercise function": "good",
                             "Nutrition": "Observation required"
                         },
-    "cefoxSR1601003701": {
+    "cefoxSR1707003701": {
                             " BMI": 22.3,
                             " Body Age": 66,
                             "Age": 73.0,
@@ -49,7 +49,7 @@
                             "Height": 155.0,
                             "Body weight": 50.0,
                             "Drinking": "no",
-                            " Sleep Hour": 0.0,
+                            " Sleep Hour": 23.9,
                             "Antihypertensive": "None",
                             "Osteoporosis drug": "Alendronic acid",
                             "Antidiabetic drug": "Tenelia,Metoformin,Repaglinide",
@@ -83,7 +83,7 @@
                             "Exercise function": "Observation required",
                             "Nutrition": "Observation required"
                         },
-    "cefoxSR1601004301": {
+    "cefoxSR1707004301": {
                             " BMI": 21.9,
                             " Body Age": 65,
                             "Age": 73.0,
@@ -91,7 +91,7 @@
                             "Height": 155.0,
                             "Body weight": 50.0,
                             "Drinking": "no",
-                            " Sleep Hour": 0.0,
+                            " Sleep Hour": 11.35,
                             "Antihypertensive": "Trichlormethiazide,Amlodipine",
                             "Osteoporosis drug": "None",
                             "Antidiabetic drug": "Gractive",

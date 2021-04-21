@@ -173,9 +173,11 @@ def dummies(data):
 
 @udf(returnType=DoubleType())
 def predictor(*kwargs):
-    def sigmoid(x):
+    def sigmoid(x): 
         if x > 1000000000:
             return 1
+        if x < -21:
+            return 0
         return 1 / (1 + math.exp(-x))
 
 
