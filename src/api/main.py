@@ -180,12 +180,18 @@ def predictor(*kwargs):
             return 0
         return 1 / (1 + math.exp(-x))
 
+    def check_more_one(x):
+        if x > 1:
+            return 1
+        else:
+            return x
 
     #open picked model
     model = open("../../data/model/IsolationForest", "rb")
     ilf_model = pickle.load(model)
     model.close()
     answerIF_proba = abs(ilf_model.score_samples([kwargs]))
+
 
  
     model = open("../../data/model/LocalOutlierFactor", "rb")
@@ -199,8 +205,11 @@ def predictor(*kwargs):
     model.close()
     answerEE_proba = ee_model.decision_function([kwargs])
     answerEE_proba = list(map(sigmoid, answerEE_proba))[0]
-    
-    return (float(answerIF_proba*2) + float(answerLOF_proba*1) + float(answerEE_proba*2)) / 5
+
+    result = (float(answerIF_proba*2) + float(answerLOF_proba*1) + float(answerEE_proba*2)) / 5
+    result = result.apply(check_more_one)
+
+    return result
 
 app = FastAPI()
 
