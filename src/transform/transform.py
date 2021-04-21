@@ -2,6 +2,7 @@ import pandas as pd
 import os                                                                                                              
 from header import *
 
+# transform
 sa_01 = pd.read_csv('../../data/01_Subject_attributes.csv', header=None)
 sa_01.columns = sa_01_header
 sa_01 = sa_01[sa_01['SubjectID'].notna()].reset_index(drop=True)
