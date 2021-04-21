@@ -207,7 +207,7 @@ def predictor(*kwargs):
     answerEE_proba = list(map(sigmoid, answerEE_proba))[0]
 
     result = (float(answerIF_proba*2) + float(answerLOF_proba*1) + float(answerEE_proba*2)) / 5
-    result = result.apply(check_more_one)
+    result = check_more_one(result)
 
     return result
 
