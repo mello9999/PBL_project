@@ -1,0 +1,58 @@
+let
+    url = "http://127.0.0.1:8000/predict/",
+    body = "{
+                ""cefoxSR1707004501"": {
+                                            "" BMI"": 16.7,
+                                            "" Body Age"": 38.0,
+                                            ""Age"": 79.0,
+                                            ""Gender"": ""Man"",
+                                            ""Height"": 165.0,
+                                            ""Body weight"": 58.0,
+                                            ""Drinking"": ""yes"",
+                                            "" Sleep Hour"": 0.0,
+                                            ""Antihypertensive"": ""None"",
+                                            ""Osteoporosis drug"": ""None"",
+                                            ""Antidiabetic drug"": ""None"",
+                                            "" Body Fat Percentage"": 25.6,
+                                            "" Basal Metabolism"": 1381.9312,
+                                            ""Total cholesterol"": ""None"",
+                                            ""LDL cholesterol"": ""None"",
+                                            ""HDL cholesterol"": ""None"",
+                                            ""HbA1c"": ""None"",
+                                            ""AST"": ""None"",
+                                            ""ALT"": ""None"",
+                                            ""LDH"": ""None"",
+                                            ""Na"": ""None"",
+                                            ""K"": ""None"",
+                                            ""Diabetes mellitus"": ""Nothing"",
+                                            "" Systolic Pressure"": ""None"",
+                                            "" Diastolic Pressure"": ""None"",
+                                            "" Mean Arterial Pressure"": ""None"",
+                                            "" Pulse Rate"": ""None"",
+                                            "" Irregular Pulse Flag"": ""None"",
+                                            ""Blood sugar"": ""None"",
+                                            ""Appetite Questionnaire results"": "" a lot"",
+                                            ""Preference Questionnaire results"": ""I like light taste"",
+                                            ""Sleep Questionnaire results"": ""Sleeping well"",
+                                            ""Anxiety about health Questionnaire results"": ""None"",
+                                            ""I can go up and down stairs without being transmitted to the railing or wall"": ""yes"",
+                                            ""I can walk for more than 15 minutes"": ""yes"",
+                                            ""I am actively going out"": ""yes"",
+                                            ""Do the cleaning and washing yourself"": ""yes"",
+                                            ""Shop for daily necessities yourself"": ""yes"",
+                                            ""Exercise function"": ""good"",
+                                            ""Nutrition"": ""good""
+                                        }
+            }",
+    Source = Json.Document(Web.Contents(url,
+                                    [Headers = [#"Content-Type"="application/json"],
+                                            Content = Text.ToBinary(body) 
+                                    ]   
+                                )
+                            ),
+    #"Converted to Table" = Record.ToTable(Source),
+    #"Extracted Values" = Table.TransformColumns(#"Converted to Table", {"Value", each Text.Combine(List.Transform(_, Text.From)), type text}),
+    #"Renamed Columns" = Table.RenameColumns(#"Extracted Values",{{"Name", "SubjectID"}, {"Value", "Risk"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Risk", Percentage.Type}})
+in
+    #"Changed Type"
