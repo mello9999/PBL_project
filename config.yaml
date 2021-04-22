@@ -1,0 +1,6 @@
+---
+azure_storage_connectionstring: "DefaultEndpointsProtocol=https;AccountName=fuze1;AccountKey=4wE3ziTUR57rqg6QvQVuXtqzNpa9GHoKSsQT9XmbrhLFlDjDT/o/eY1zXTQePfYlevp02v0+FD8r52r2GSNbwg==;EndpointSuffix=core.windows.net"
+data_container_name: "data"
+source_folder: "D:/PBL/1/PBL_project/data"
+
+
