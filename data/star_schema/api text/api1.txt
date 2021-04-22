@@ -107,10 +107,10 @@
                             "Na": "None",
                             "K": "None",
                             "Diabetes mellitus": "Yes",
-                            " Systolic Pressure": 131.0,
-                            " Diastolic Pressure": 78.0,
-                            " Mean Arterial Pressure": 103.0,
-                            " Pulse Rate": 51.0,
+                            " Systolic Pressure": 139.0,
+                            " Diastolic Pressure": 80.0,
+                            " Mean Arterial Pressure": 108.0,
+                            " Pulse Rate": 62.0,
                             " Irregular Pulse Flag": " false",
                             "Blood sugar": 108.0,
                             "Appetite Questionnaire results": " a lot",
@@ -122,7 +122,7 @@
                             "I am actively going out": "yes",
                             "Do the cleaning and washing yourself": "yes",
                             "Shop for daily necessities yourself": "yes",
-                            "Exercise function": "good",
+                            "Exercise function": "Observation required",
                             "Nutrition": "Observation required"
                         },
     "cefoxSR1707004201": {
