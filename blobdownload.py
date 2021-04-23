@@ -7,11 +7,11 @@ import datetime
 # If not, create BlobServiceClient using trl & credentials.
 #Example: https://docs.microsoft.com/en-us/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient 
 
-connection_string = ("DefaultEndpointsProtocol=https;AccountName=fuze1;AccountKey=4wE3ziTUR57rqg6QvQVuXtqzNpa9GHoKSsQT9XmbrhLFlDjDT/o/eY1zXTQePfYlevp02v0+FD8r52r2GSNbwg==;EndpointSuffix=core.windows.net")
+connection_string = ("")
 
 blob_service_client = BlobServiceClient.from_connection_string(connection_string) 
 # create container client
-container_name = 'data'
+container_name = ''
 container_client = blob_service_client.get_container_client(container_name)
 
 #Check if there is a top level local folder exist for container.
