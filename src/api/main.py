@@ -207,8 +207,7 @@ def predictor(*kwargs):
     answerEE_proba = list(map(sigmoid, answerEE_proba))[0]
 
     result = (float(answerIF_proba*2) + float(answerLOF_proba*1) + float(answerEE_proba*2)) / 5
-    result = check_more_one(result)
-
+    result = float(check_more_one(result))
     return result
 
 app = FastAPI()
@@ -250,11 +249,11 @@ async def predict(body: dict):
         column_input = []
         for k in co:
             column_input.append(b[k])
-
         column_input = spark.sparkContext.parallelize([column_input]).toDF()
 
         df_prediction = column_input.withColumn("prediction",
                                                     predictor(*column_input))
-        result = [list(row)[0] for row in df_prediction.select('prediction').collect()]
+        x = df_prediction.select('prediction').collect()
+        result = [list(row)[0] for row in x]
         results[key] = result
     return results
