@@ -166,7 +166,7 @@ def dummies(data):
           "LDH", "Na", "K", " Systolic Pressure", " Diastolic Pressure", 
           " Mean Arterial Pressure", " Pulse Rate", "Blood sugar"]
 
-    for i, key in enumerate(co):
+    for i, key in enumerate(co):  
       data_scaled[key] = float(((data_scaled[key] - m[i]) / v[i]) * s[i])
       
     return data_scaled

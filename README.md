@@ -31,11 +31,11 @@ Member in team : 'PFuzesangluis team'
 <p align="center">.. coming soon ..</p>
 
 #### :black_heart: Dark Theme :black_heart:
-<p align="center"><img src="System design/picture/dark/dark_dashboard_ver1.1.0.png" width=800 height=500 ></p>
+<p align="center"><img src="System design/picture/dark/dark_dashboard_ver1.1.1.png" width=800 height=500 ></p>
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
 - :white_heart: Light Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjZjIyMjgtM2FjNC00ZjBlLTg2NTUtY2E5N2NjMzZlMTc4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection)  
--  :black_heart: Dark Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNWFjZWUxMjYtNDMzMy00NWM4LWI3NTQtMzM5MTA5MDA1NjI5IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&fbclid=IwAR1hMotefgQ3HKaDhfkYO4yyv6hJ5UJM5Lb4lF7882pa71X9HePptuqDCLc) 
+-  :black_heart: Dark Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDRjYzZhMmQtM2VmMC00MjFlLTkxNDktZTAzOWM5ODcxMWI4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection) 
 
 # :gear: Tools in Project
 - [X] Azure App Service 
