@@ -206,7 +206,7 @@ def predictor(*kwargs):
     answerEE_proba = ee_model.decision_function([kwargs])
     answerEE_proba = list(map(sigmoid, answerEE_proba))[0]
 
-    result = (float(answerIF_proba*2) + float(answerLOF_proba*1) + float(answerEE_proba*2)) / 5
+    result = (float(answerIF_proba*6) + float(answerLOF_proba) + float(answerEE_proba*6)) / 13
     result = float(check_more_one(result))
     return result
 
