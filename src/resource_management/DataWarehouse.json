@@ -1,0 +1,104 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlServerName": {
+            "defaultValue": "[concat('sql', uniqueString(resourceGroup().id))]",
+            "type": "String",
+            "metadata": {
+                "description": "<Put Postgresql server name here>"
+            }
+        },
+        "sqlAdministratorLogin": {
+            "type": "String",
+            "metadata": {
+                "description": "<Put admin username of Postgresql server>"
+            }
+        },
+        "sqlAdministratorPassword": {
+            "type": "SecureString",
+            "metadata": {
+                "description": "<Put Postgresql admin password>"
+            }
+        },
+        "dataWarehouseName": {
+            "type": "String",
+            "metadata": {
+                "description": "<Put data warehouse name here>"
+            }
+        },
+        "transparentDataEncryption": {
+            "defaultValue": "Enabled",
+            "allowedValues": [
+                "Enabled",
+                "Disabled"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "<Enable/Disable Transparent Data Encryption>"
+            }
+        },
+        "serviceLevelObjective": {
+            "defaultValue": "DW400c",
+            "type": "String",
+            "metadata": {
+                "description": "Performance Level"
+            }
+        },
+        "location": {
+            "defaultValue": "[resourceGroup().location]",
+            "type": "String",
+            "metadata": {
+                "description": "southeastasia"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2020-02-02-preview",
+            "name": "[parameters('sqlServerName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "administratorLogin": "[parameters('sqlAdministratorLogin')]",
+                "administratorLoginPassword": "[parameters('sqlAdministratorPassword')]",
+                "version": "12.0"
+            },
+            "resources": [
+                {
+                    "type": "databases",
+                    "apiVersion": "2020-02-02-preview",
+                    "name": "[parameters('dataWarehouseName')]",
+                    "location": "[parameters('location')]",
+                    "dependsOn": [
+                        "[parameters('sqlServerName')]"
+                    ],
+                    "kind": "v12.0,user,datawarehouse",
+                    "properties": {
+                        "edition": "DataWarehouse",
+                        "status": "Online",
+                        "requestedServiceObjectiveName": "[parameters('serviceLevelObjective')]",
+                        "collation": "SQL_Latin1_General_CP1_CI_AS",
+                        "readScale": "Disabled",
+                        "zoneRedundant": false,
+                        "isUpgradeRequested": false
+                    },
+                    "resources": [
+                        {
+                            "type": "transparentDataEncryption",
+                            "apiVersion": "2017-03-01-preview",
+                            "name": "current",
+                            "dependsOn": [
+                                "[parameters('dataWarehouseName')]"
+                            ],
+                            "properties": {
+                                "status": "[parameters('transparentDataEncryption')]"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
