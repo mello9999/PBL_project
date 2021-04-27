@@ -34,7 +34,7 @@ Member in team : 'PFuzesangluis team'
 <p align="center"><img src="System design/picture/dark/dark_dashboard_ver1.1.1.png" width=600 height=400 ></p>
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
-- :white_heart: Light Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjliODZlNWItZDhmNS00MDBhLTllYTItMTQzOGFiODc5NzM1IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true)  
+- :white_heart: Light Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOTFjMDkyOTgtNTAyOC00YTJkLThlN2YtM2RiMjQwZDljMmFmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true)  
 -  :black_heart: Dark Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiY2ZiN2E3NDctOTQ1ZS00MjA3LTgxYzctNTY1NWI2MWY0MDQ0IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true) 
 
 # :gear: Tools in Project
