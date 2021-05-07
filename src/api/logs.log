@@ -1,0 +1,60 @@
+2021-05-08 05:54:29,686:INFO:Initializing load_model()
+2021-05-08 05:54:29,686:INFO:load_model(verbose=True, authentication=None, platform=None, model_name=../../data/model/stackingmodel)
+2021-05-08 05:54:32,698:INFO:Initializing predict_model()
+2021-05-08 05:54:32,698:INFO:predict_model(display=None, ml_usecase=MLUsecase.CLASSIFICATION, verbose=True, round=4, raw_score=False, encoded_labels=False, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(ml_usecase='classification',
+                                      target='Risk Level')),
+                ('imputer',
+                 Iterative_Imputer(classifier=LGBMClassifier(random_state=123),
+                                   max_iter=5, ordinal_columns=[],
+                                   random_state=123,
+                                   regressor=LGBMRegressor(random_state=123),
+                                   target='Risk Level')),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strategy=...
+                                                 RandomForestClassifier(bootstrap=False,
+                                                                        class_weight='balanced_subsample',
+                                                                        max_depth=4,
+                                                                        max_features='sqrt',
+                                                                        min_impurity_decrease=0.0005,
+                                                                        min_samples_leaf=3,
+                                                                        min_samples_split=5,
+                                                                        n_estimators=260,
+                                                                        n_jobs=-1,
+                                                                        random_state=123))],
+                                    final_estimator=KNeighborsClassifier(metric='manhattan',
+                                                                         n_jobs=-1,
+                                                                         n_neighbors=13,
+                                                                         weights='distance'),
+                                    n_jobs=-1, passthrough=True)]]))
+2021-05-08 05:54:32,698:INFO:Checking exceptions
+2021-05-08 05:54:32,698:INFO:Preloading libraries
+2021-05-08 05:54:33,612:INFO:Initializing predict_model()
+2021-05-08 05:54:33,613:INFO:predict_model(display=None, ml_usecase=MLUsecase.CLASSIFICATION, verbose=True, round=4, raw_score=False, encoded_labels=False, probability_threshold=None, estimator=Pipeline(steps=[('dtypes',
+                 DataTypes_Auto_infer(ml_usecase='classification',
+                                      target='Risk Level')),
+                ('imputer',
+                 Iterative_Imputer(classifier=LGBMClassifier(random_state=123),
+                                   max_iter=5, ordinal_columns=[],
+                                   random_state=123,
+                                   regressor=LGBMRegressor(random_state=123),
+                                   target='Risk Level')),
+                ('new_levels1',
+                 New_Catagorical_Levels_in_TestData(replacement_strategy=...
+                                                 RandomForestClassifier(bootstrap=False,
+                                                                        class_weight='balanced_subsample',
+                                                                        max_depth=4,
+                                                                        max_features='sqrt',
+                                                                        min_impurity_decrease=0.0005,
+                                                                        min_samples_leaf=3,
+                                                                        min_samples_split=5,
+                                                                        n_estimators=260,
+                                                                        n_jobs=-1,
+                                                                        random_state=123))],
+                                    final_estimator=KNeighborsClassifier(metric='manhattan',
+                                                                         n_jobs=-1,
+                                                                         n_neighbors=13,
+                                                                         weights='distance'),
+                                    n_jobs=-1, passthrough=True)]]))
+2021-05-08 05:54:33,613:INFO:Checking exceptions
+2021-05-08 05:54:33,613:INFO:Preloading libraries

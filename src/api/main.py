@@ -1,14 +1,13 @@
 from fastapi import Request, FastAPI
 
+import pickle
 import numpy as np
 import pandas as pd
 import math
 import copy
+import joblib
 
-from pycaret.classification import *
-
-saved_final_rf = load_model('Final RF Model 08Feb2020')
-
+model = joblib.load('../../data/model/stackingmodel.pkl')
 
 def cleaning(star_data):
     if star_data['Age'] == "None":
@@ -163,44 +162,6 @@ def dummies(data):
       
     return data_scaled
 
-@udf(returnType=DoubleType())
-def predictor(*kwargs):
-    def sigmoid(x): 
-        if x > 1000000000:
-            return 1
-        if x < -21:
-            return 0
-        return 1 / (1 + math.exp(-x))
-
-    def check_more_one(x):
-        if x > 1:
-            return 1
-        else:
-            return x
-
-    #open picked model
-    model = open("../../data/model/IsolationForest", "rb")
-    ilf_model = pickle.load(model)
-    model.close()
-    answerIF_proba = abs(ilf_model.score_samples([kwargs]))
-
-
- 
-    model = open("../../data/model/LocalOutlierFactor", "rb")
-    lof_model = pickle.load(model)
-    model.close()
-    answerLOF_proba = lof_model.decision_function([kwargs])
-    answerLOF_proba = 1 - ((answerLOF_proba + 0.9118517621467248) / (0.5391638200654012 + 0.9118517621467248)) 
-
-    model = open("../../data/model/EllipticEnvelope", "rb")
-    ee_model = pickle.load(model)
-    model.close()
-    answerEE_proba = ee_model.decision_function([kwargs])
-    answerEE_proba = list(map(sigmoid, answerEE_proba))[0]
-
-    result = (float(answerIF_proba*6) + float(answerLOF_proba) + float(answerEE_proba*6)) / 13
-    result = float(check_more_one(result))
-    return result
 
 app = FastAPI()
 
@@ -238,14 +199,6 @@ async def predict(body: dict):
        'Nutrition_None', 'Nutrition_Observation required', 'Nutrition_good']
     for key in body:
         b = dummies(cleaning(body[key]))
-        column_input = []
-        for k in co:
-            column_input.append(b[k])
-        column_input = spark.sparkContext.parallelize([column_input]).toDF()
-
-        df_prediction = column_input.withColumn("prediction",
-                                                    predictor(*column_input))
-        x = df_prediction.select('prediction').collect()
-        result = [list(row)[0] for row in x]
+        result = model.predict_proba(pd.DataFrame([b]))[0][1]
         results[key] = result
     return results
