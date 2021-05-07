@@ -1,21 +1,13 @@
 from fastapi import Request, FastAPI
 
-import pickle
 import numpy as np
 import pandas as pd
 import math
 import copy
 
-from pyspark.sql import SparkSession
-from pyspark.sql.types import *
-from pyspark.sql.functions import udf
+from pycaret.classification import *
 
-spark = SparkSession \
-    .builder \
-    .appName("Spark Dataframe") \
-    .config("spark.some.config.option") \
-    .getOrCreate()
-
+saved_final_rf = load_model('Final RF Model 08Feb2020')
 
 
 def cleaning(star_data):
