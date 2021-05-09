@@ -79,6 +79,11 @@ sphy['SubjectID'] = sphy['SubjectID'] + '01'
 temp['SubjectID'] = temp['SubjectID'] + '01'
 weight['SubjectID'] = weight['SubjectID'] + '01'    
 
+activ.to_csv('../../data/star_schema/activ.csv', index=False)
+exist.to_csv('../../data/star_schema/exist.csv', index=False)
+sphy.to_csv('../../data/star_schema/sphy.csv', index=False)
+temp.to_csv('../../data/star_schema/temp.csv', index=False)
+weight.to_csv('../../data/star_schema/weight.csv', index=False)
 
 be_li_02 = li_02[['SubjectID', 'Appetite Questionnaire results', 'Preference Questionnaire results', 'Sleep Questionnaire results', 'Anxiety about health Questionnaire results', 
                   'I can go up and down stairs without being transmitted to the railing or wall','I can walk for more than 15 minutes', 'I am actively going out',
