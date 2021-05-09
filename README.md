@@ -27,14 +27,10 @@ Member in team : 'PFuzesangluis team'
 
 # :heartpulse::chart_with_upwards_trend: Vitualization
 ### Dashboard in project  
-#### :white_heart: Light Theme :white_heart:
-<p align="center"><img src="System design/picture/light/light_dashboard_ver1.1.1.png" width=600 height=400 ></p>
-
 #### :black_heart: Dark Theme :black_heart:
 <p align="center"><img src="System design/picture/dark/dark_dashboard_ver1.1.1.png" width=600 height=400 ></p>
 
 ### :globe_with_meridians: :desktop_computer: Link to Dashboard :white_heart: :black_heart:
-- :white_heart: Light Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOTFjMDkyOTgtNTAyOC00YTJkLThlN2YtM2RiMjQwZDljMmFmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true)  
 -  :black_heart: Dark Theme : [View to Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZjBkNDBkYTMtN2ZhZi00ZDNjLTgxM2QtNjUyOGNiMTgyYzkzIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true&pageName=ReportSection1cdf8bba06e9bf1e5c10) 
 
 # :gear: Tools in Project
