@@ -1,0 +1,165 @@
+{
+	"name": "sa_01",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "01_Subject_attributes.csv",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "'No'",
+				"type": "String"
+			},
+			{
+				"name": "'SubjectID'",
+				"type": "String"
+			},
+			{
+				"name": " 'Housing complex'",
+				"type": "String"
+			},
+			{
+				"name": " 'Gender'",
+				"type": "String"
+			},
+			{
+				"name": " 'Birthday'",
+				"type": "String"
+			},
+			{
+				"name": " 'Age'",
+				"type": "String"
+			},
+			{
+				"name": " 'certification of care need'",
+				"type": "String"
+			},
+			{
+				"name": " 'Number of residents'",
+				"type": "String"
+			},
+			{
+				"name": " 'Height'",
+				"type": "String"
+			},
+			{
+				"name": " 'Body weight'",
+				"type": "String"
+			},
+			{
+				"name": " 'Stride（cm)'",
+				"type": "String"
+			},
+			{
+				"name": " 'Medical history'",
+				"type": "String"
+			},
+			{
+				"name": " 'Disease name'",
+				"type": "String"
+			},
+			{
+				"name": " 'Regular hospital consultation'",
+				"type": "String"
+			},
+			{
+				"name": " 'Antihypertensive'",
+				"type": "String"
+			},
+			{
+				"name": " 'Other1'",
+				"type": "String"
+			},
+			{
+				"name": " 'Smoking'",
+				"type": "String"
+			},
+			{
+				"name": " 'Drinking'",
+				"type": "String"
+			},
+			{
+				"name": " 'Family composition of living together'",
+				"type": "String"
+			},
+			{
+				"name": "  'Care need certification time'",
+				"type": "String"
+			},
+			{
+				"name": " 'Hobby・preference・habit'",
+				"type": "String"
+			},
+			{
+				"name": "  'Activities'",
+				"type": "String"
+			},
+			{
+				"name": " 'Community'",
+				"type": "String"
+			},
+			{
+				"name": " 'Everyday'",
+				"type": "String"
+			},
+			{
+				"name": " 'Everyday With or without blood pressure measurement'",
+				"type": "String"
+			},
+			{
+				"name": " 'Whether or not to use a pedometer on a daily basis'",
+				"type": "String"
+			},
+			{
+				"name": " 'Other2'",
+				"type": "String"
+			},
+			{
+				"name": " 'right Measured value'",
+				"type": "String"
+			},
+			{
+				"name": " 'right Evaluation'",
+				"type": "String"
+			},
+			{
+				"name": " 'right Presence or absence of abnormality'",
+				"type": "String"
+			},
+			{
+				"name": " 'left easured value'",
+				"type": "String"
+			},
+			{
+				"name": " 'left Evaluation'",
+				"type": "String"
+			},
+			{
+				"name": " 'left Presence or absence of abnormality'",
+				"type": "String"
+			},
+			{
+				"name": " 'Locomotive Measured value'",
+				"type": "String"
+			},
+			{
+				"name": " 'Locomotive Presence or absence of abnormality'                ",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
