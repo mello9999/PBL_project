@@ -1,4 +1,5 @@
 SubjectID,Arrhythmia,Diabetes mellitus
+'SubjectID', 'Arrhythmia', 'Diabetes mellitus'
 cefoxSR1707004101,Nothing,Nothing
 cefoxSR1707003701,Nothing,Yes
 cefoxSR1707005101,Nothing,Nothing
