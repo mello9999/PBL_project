@@ -50,7 +50,7 @@ ir_04_header = ['No', 'SubjectID', 'Presence or absence of inspection record',
                 'History of coronary artery disease', 'Chronic kidney disease diagnosis age',
                 'Total protein', 'Albumin', 'Hematuria']
 
-ev_05_header = ['No','SubjectID', 'Evaluation contents', 'Health status', 'Biological function', 
+ev_05_header = ['No','SubjectID', 'Health status', 'Biological function', 
                 'Exercise function', 'Nutrition', 'Cognitive function', 'Fall', 
                 'High blood pressure', 'Arrhythmia', 'Osteoporosis', 
                 'Diabetes mellitus', 'Exercise guidance', 'Nutrition guidance',
