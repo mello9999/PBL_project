@@ -15,9 +15,67 @@
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "'SubjectID'",
+				"type": "String"
+			},
+			{
+				"name": " 'Appetite Questionnaire results'",
+				"type": "String"
+			},
+			{
+				"name": " 'Preference Questionnaire results'",
+				"type": "String"
+			},
+			{
+				"name": " 'Sleep Questionnaire results'",
+				"type": "String"
+			},
+			{
+				"name": "'Anxiety about health Questionnaire results'",
+				"type": "String"
+			},
+			{
+				"name": " 'I can go up and down stairs without being transmitted to the railing or wall'",
+				"type": "String"
+			},
+			{
+				"name": " 'I can walk for more than 15 minutes'",
+				"type": "String"
+			},
+			{
+				"name": " 'I am actively going out'",
+				"type": "String"
+			},
+			{
+				"name": " 'Do the cleaning and washing yourself'",
+				"type": "String"
+			},
+			{
+				"name": " 'Shop for daily necessities yourself'",
+				"type": "String"
+			},
+			{
+				"name": " 'No weight loss of more than 2-3 kg in the last 6 months'",
+				"type": "String"
+			},
+			{
+				"name": " 'No weight gain of more than 2-3 kg in the last 2 months'",
+				"type": "String"
+			},
+			{
+				"name": " 'Exercise function'",
+				"type": "String"
+			},
+			{
+				"name": " 'Nutrition'",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

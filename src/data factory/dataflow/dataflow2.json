@@ -1,0 +1,32 @@
+{
+	"name": "dataflow2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "sa_01",
+						"type": "DatasetReference"
+					},
+					"name": "sa01"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "medicine_info",
+						"type": "DatasetReference"
+					},
+					"name": "medicineInfo"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1"
+				}
+			],
+			"script": "source(output(\n\t\t{'No'} as string,\n\t\t{'SubjectID'} as string,\n\t\t{ 'Housing complex'} as string,\n\t\t{ 'Gender'} as string,\n\t\t{ 'Birthday'} as string,\n\t\t{ 'Age'} as string,\n\t\t{ 'certification of care need'} as string,\n\t\t{ 'Number of residents'} as string,\n\t\t{ 'Height'} as string,\n\t\t{ 'Body weight'} as string,\n\t\t{ 'Stride（cm)'} as string,\n\t\t{ 'Medical history'} as string,\n\t\t{ 'Disease name'} as string,\n\t\t{ 'Regular hospital consultation'} as string,\n\t\t{ 'Antihypertensive'} as string,\n\t\t{ 'Other1'} as string,\n\t\t{ 'Smoking'} as string,\n\t\t{ 'Drinking'} as string,\n\t\t{ 'Family composition of living together'} as string,\n\t\t{  'Care need certification time'} as string,\n\t\t{ 'Hobby・preference・habit'} as string,\n\t\t{  'Activities'} as string,\n\t\t{ 'Community'} as string,\n\t\t{ 'Everyday'} as string,\n\t\t{ 'Everyday With or without blood pressure measurement'} as string,\n\t\t{ 'Whether or not to use a pedometer on a daily basis'} as string,\n\t\t{ 'Other2'} as string,\n\t\t{ 'right Measured value'} as string,\n\t\t{ 'right Evaluation'} as string,\n\t\t{ 'right Presence or absence of abnormality'} as string,\n\t\t{ 'left easured value'} as string,\n\t\t{ 'left Evaluation'} as string,\n\t\t{ 'left Presence or absence of abnormality'} as string,\n\t\t{ 'Locomotive Measured value'} as string,\n\t\t{ 'Locomotive Presence or absence of abnormality'                } as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> sa01\nsa01 select(mapColumn(\n\t\t{'SubjectID'},\n\t\t{ 'Antihypertensive'}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 sink(input(\n\t\t{'SubjectID'} as string,\n\t\t{ 'Appetite Questionnaire results'} as string,\n\t\t{ 'Preference Questionnaire results'} as string,\n\t\t{ 'Sleep Questionnaire results'} as string,\n\t\t{'Anxiety about health Questionnaire results'} as string,\n\t\t{ 'I can go up and down stairs without being transmitted to the railing or wall'} as string,\n\t\t{ 'I can walk for more than 15 minutes'} as string,\n\t\t{ 'I am actively going out'} as string,\n\t\t{ 'Do the cleaning and washing yourself'} as string,\n\t\t{ 'Shop for daily necessities yourself'} as string,\n\t\t{ 'No weight loss of more than 2-3 kg in the last 6 months'} as string,\n\t\t{ 'No weight gain of more than 2-3 kg in the last 2 months'} as string,\n\t\t{ 'Exercise function'} as string,\n\t\t{ 'Nutrition'} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> medicineInfo"
+		}
+	}
+}
