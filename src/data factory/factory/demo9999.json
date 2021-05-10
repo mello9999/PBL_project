@@ -1,9 +1,0 @@
-{
-	"name": "demo9999",
-	"location": "southeastasia",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "b10b5795-a9a8-4fe9-87a1-29f5903d5fd4",
-		"tenantId": "6f4432dc-20d2-441d-b1db-ac3380ba633d"
-	}
-}
