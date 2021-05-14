@@ -35,9 +35,9 @@ Member in team : 'PFuzesangluis team'
 
 # :gear: Tools in Project
 - [X] Azure App Service 
-    - e.g . Azure Blob Storage , Azure PostgreSQL Database , Azure SQL Data Warehouse
+    - e.g . Azure Blob Storage , Azure PostgreSQL Database
 - [X] Apache Airflow 
-- [X] Apache Spark 
+- [X] Data Factory
 - [X] Docker 
 
   
