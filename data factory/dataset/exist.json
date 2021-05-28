@@ -1,0 +1,45 @@
+{
+	"name": "exist",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "71_sensing_data"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "exist.csv",
+				"folderPath": "71_sensing_data",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Device",
+				"type": "String"
+			},
+			{
+				"name": " Measure Date Time",
+				"type": "String"
+			},
+			{
+				"name": " Exist",
+				"type": "String"
+			},
+			{
+				"name": "SubjectID",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

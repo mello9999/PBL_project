@@ -1,0 +1,77 @@
+{
+	"name": "weight",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "71_sensing_data"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "weight.csv",
+				"folderPath": "71_sensing_data",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "device",
+				"type": "String"
+			},
+			{
+				"name": " serialNo",
+				"type": "String"
+			},
+			{
+				"name": " Battery Level",
+				"type": "String"
+			},
+			{
+				"name": " Measure Date Time",
+				"type": "String"
+			},
+			{
+				"name": " Body Fat Percentage",
+				"type": "String"
+			},
+			{
+				"name": " Basal Metabolism",
+				"type": "String"
+			},
+			{
+				"name": " Skeletal Muscle Percentage",
+				"type": "String"
+			},
+			{
+				"name": " Weight",
+				"type": "String"
+			},
+			{
+				"name": " BMI",
+				"type": "String"
+			},
+			{
+				"name": " Visceral Fat Level",
+				"type": "String"
+			},
+			{
+				"name": " Body Age",
+				"type": "String"
+			},
+			{
+				"name": "SubjectID",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

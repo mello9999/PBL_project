@@ -1,0 +1,58 @@
+{
+	"name": "dataflow7",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "active",
+						"type": "DatasetReference"
+					},
+					"name": "active"
+				},
+				{
+					"dataset": {
+						"referenceName": "li_02",
+						"type": "DatasetReference"
+					},
+					"name": "li02"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "sleep_info",
+						"type": "DatasetReference"
+					},
+					"name": "sleepInfo"
+				},
+				{
+					"dataset": {
+						"referenceName": "time_info",
+						"type": "DatasetReference"
+					},
+					"name": "timeInfo"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1"
+				},
+				{
+					"name": "Select2"
+				},
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Select3"
+				},
+				{
+					"name": "Select4"
+				}
+			],
+			"script": "source(output(\n\t\tDevice as string,\n\t\t{ SerialNo} as string,\n\t\t{ Battery Level} as string,\n\t\t{ Measure Date Time} as string,\n\t\t{ Temperature} as string,\n\t\t{ Step} as string,\n\t\t{ Calorie} as string,\n\t\t{ Sleep State} as string,\n\t\t{ Sleep Hour} as string,\n\t\t{ Sleep Minute} as string,\n\t\tSubjectID as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> active\nsource(output(\n\t\t{'No'} as string,\n\t\t{'SubjectID'} as string,\n\t\t{ 'Date confirmed'} as string,\n\t\t{ 'Appetite Questionnaire results'} as string,\n\t\t{'Eating habit Questionnaire results'} as string,\n\t\t{ 'Preference Questionnaire results'} as string,\n\t\t{ 'Sleep Questionnaire results'} as string,\n\t\t{'Anxiety about health Questionnaire results'} as string,\n\t\t{ 'Anxiety about forgetfulness Questionnaire results'} as string,\n\t\t{ 'I can go up and down stairs without being transmitted to the railing or wall'} as string,\n\t\t{ 'I can get up from the chair'} as string,\n\t\t{ 'I can walk for more than 15 minutes'} as string,\n\t\t{ 'I can walk without a cane'} as string,\n\t\t{ 'I am actively going out'} as string,\n\t\t{ 'Walking function Score'} as string,\n\t\t{ 'Walking function Evaluation'} as string,\n\t\t{ 'Do the cleaning and washing yourself'} as string,\n\t\t{ 'Shop for daily necessities yourself'} as string,\n\t\t{'I can prepare your own meals'} as string,\n\t\t{ 'I can write the documents to be submitted to the government office by myself'} as string,\n\t\t{ '自分で電話帳を調べ、電話をかけることができる'} as string,\n\t\t{ '生活機能 Score'} as string,\n\t\t{ '生活機能 Evaluation'} as string,\n\t\t{ 'I have a counselor in case of trouble'} as string,\n\t\t{ \"I have a counselor when I'm sick\"} as string,\n\t\t{ \"I have someone who will take me to the hospital when I'm sick\"} as string,\n\t\t{ 'There are people who take care of me when I fall asleep'} as string,\n\t\t{ 'Relying on someone'} as string,\n\t\t{ 'ソーシャルサポート Score'} as string,\n\t\t{ 'ソーシャルサポート Evaluation'} as string,\n\t\t{ 'No weight loss of more than 2-3 kg in the last 6 months'} as string,\n\t\t{ 'No weight gain of more than 2-3 kg in the last 2 months'} as string,\n\t\t{ 'I can eat hard food'} as string,\n\t\t{When I drink tea or soup, I don't get sick} as string,\n\t\t{I don't mind thirst} as string,\n\t\t{ '口腔・栄養 Score'} as string,\n\t\t{ '口腔・栄養 Evaluation'} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> li02\nactive select(mapColumn(\n\t\t{ Measure Date Time},\n\t\t{ Sleep Hour},\n\t\t{ Sleep Minute},\n\t\tSubjectID\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nli02 select(mapColumn(\n\t\t{'SubjectID'},\n\t\t{ 'Sleep Questionnaire results'}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select2\nSelect1, Select2 join(SubjectID == {'SubjectID'},\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join1\nJoin1 select(mapColumn(\n\t\t{ Measure Date Time},\n\t\t{ Sleep Hour},\n\t\t{ Sleep Minute},\n\t\tSubjectID,\n\t\t{ 'Sleep Questionnaire results'}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select3\nSelect3 select(mapColumn(\n\t\t{ Measure Date Time}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select4\nSelect3 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sleepInfo\nSelect4 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> timeInfo"
+		}
+	}
+}

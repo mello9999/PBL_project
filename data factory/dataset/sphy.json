@@ -1,0 +1,73 @@
+{
+	"name": "sphy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "71_sensing_data"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sphy.csv",
+				"folderPath": "71_sensing_data",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Device",
+				"type": "String"
+			},
+			{
+				"name": " SerialNo",
+				"type": "String"
+			},
+			{
+				"name": " Battery Level",
+				"type": "String"
+			},
+			{
+				"name": " Measure Date Time",
+				"type": "String"
+			},
+			{
+				"name": " Systolic Pressure",
+				"type": "String"
+			},
+			{
+				"name": " Diastolic Pressure",
+				"type": "String"
+			},
+			{
+				"name": " Mean Arterial Pressure",
+				"type": "String"
+			},
+			{
+				"name": " Pulse Rate",
+				"type": "String"
+			},
+			{
+				"name": " Irregular Pulse Flag",
+				"type": "String"
+			},
+			{
+				"name": " Pulse Rate Range Detection Flag",
+				"type": "String"
+			},
+			{
+				"name": "SubjectID",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

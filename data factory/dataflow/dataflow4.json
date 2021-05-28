@@ -1,0 +1,58 @@
+{
+	"name": "dataflow4",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "sphy",
+						"type": "DatasetReference"
+					},
+					"name": "sphy"
+				},
+				{
+					"dataset": {
+						"referenceName": "ir_04",
+						"type": "DatasetReference"
+					},
+					"name": "ir04"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "blood_info",
+						"type": "DatasetReference"
+					},
+					"name": "bloodInfo"
+				},
+				{
+					"dataset": {
+						"referenceName": "time_info",
+						"type": "DatasetReference"
+					},
+					"name": "timeInfo"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1"
+				},
+				{
+					"name": "Select2"
+				},
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Select3"
+				},
+				{
+					"name": "Select4"
+				}
+			],
+			"script": "source(output(\n\t\tDevice as string,\n\t\t{ SerialNo} as string,\n\t\t{ Battery Level} as string,\n\t\t{ Measure Date Time} as string,\n\t\t{ Systolic Pressure} as string,\n\t\t{ Diastolic Pressure} as string,\n\t\t{ Mean Arterial Pressure} as string,\n\t\t{ Pulse Rate} as string,\n\t\t{ Irregular Pulse Flag} as string,\n\t\t{ Pulse Rate Range Detection Flag} as string,\n\t\tSubjectID as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> sphy\nsource(output(\n\t\t{'No'} as short,\n\t\t{ 'SubjectID'} as string,\n\t\t{ 'Presence or absence of inspection record'} as string,\n\t\t{ 'Inspection date'} as date,\n\t\t{ 'Total cholesterol'} as string,\n\t\t{ 'LDL cholesterol'} as string,\n\t\t{ 'HDL cholesterol'} as string,\n\t\t{ 'Urea nitrogen'} as string,\n\t\t{ 'Creatinine'} as short,\n\t\t{ 'Uric acid'} as string,\n\t\t{ 'Urine protein'} as string,\n\t\t{ 'Blood sugar'} as short,\n\t\t{ 'Diabetes diagnosis age'} as string,\n\t\t{ 'HbA1c'} as string,\n\t\t{ 'AST'} as string,\n\t\t{ 'ALT'} as string,\n\t\t{ 'LDH'} as string,\n\t\t{ 'Retinopathy'} as string,\n\t\t{ 'Hypertension diagnosis age sodium'} as string,\n\t\t{ 'Na'} as string,\n\t\t{ 'K'} as string,\n\t\t{ 'ECG abnormalities'} as string,\n\t\t{ 'Triglyceride'} as string,\n\t\t{ 'Diagnosis age of dyslipidemia'} as string,\n\t\t{ 'History of coronary artery disease'} as string,\n\t\t{ 'Chronic kidney disease diagnosis age'} as string,\n\t\t{ 'Total protein'} as string,\n\t\t{ 'Albumin'} as string,\n\t\t{ 'Hematuria'} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ir04\nsphy select(mapColumn(\n\t\t{ Measure Date Time},\n\t\t{ Systolic Pressure},\n\t\t{ Diastolic Pressure},\n\t\t{ Mean Arterial Pressure},\n\t\t{ Pulse Rate},\n\t\t{ Irregular Pulse Flag},\n\t\t{ Pulse Rate Range Detection Flag},\n\t\tSubjectID\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nir04 select(mapColumn(\n\t\t{ 'SubjectID'},\n\t\t{ 'Blood sugar'}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select2\nSelect1, Select2 join(SubjectID == { 'SubjectID'},\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join1\nJoin1 select(mapColumn(\n\t\t{ Measure Date Time},\n\t\t{ Systolic Pressure},\n\t\t{ Diastolic Pressure},\n\t\t{ Mean Arterial Pressure},\n\t\t{ Pulse Rate},\n\t\t{ Irregular Pulse Flag},\n\t\t{ Pulse Rate Range Detection Flag},\n\t\tSubjectID,\n\t\t{ 'Blood sugar'}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select3\nSelect3 select(mapColumn(\n\t\t{ Measure Date Time}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select4\nSelect3 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> bloodInfo\nSelect4 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> timeInfo"
+		}
+	}
+}

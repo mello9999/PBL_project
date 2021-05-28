@@ -1,0 +1,9 @@
+{
+	"name": "PBLproject1234",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "85d022fb-b949-4d82-bf37-29e24e8c7f30",
+		"tenantId": "6f4432dc-20d2-441d-b1db-ac3380ba633d"
+	}
+}
