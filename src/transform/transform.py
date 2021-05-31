@@ -111,7 +111,7 @@ disease_info = ev_05[['SubjectID', 'Arrhythmia', 'Diabetes mellitus']]
 
 pe_sa_01 = sa_01[['SubjectID', 'Age', 'Gender', 'Height', 'Body weight', 'Smoking', 'Drinking', ]]
 pe_weight = weight[['SubjectID', ' Measure Date Time', ' BMI', ' Body Age']]
-person = pd.merge(pe_weight, pe_sa_01, on='SubjectID', how='left')
+person = pd.merge(pe_sa_01,pe_weight, on='SubjectID', how='left')
 
 sl_activ = activ[['SubjectID', ' Measure Date Time', ' Sleep Hour', ' Sleep Minute']]
 sl_li_02 = li_02[['SubjectID', 'Sleep Questionnaire results']]
