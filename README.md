@@ -9,8 +9,8 @@ Member in team : 'PFuzesangluis team'
 > * :woman: Ms.Natchariya Wongamnuayporn 61070507204
 > * :man: Mr.Natchapol Patamawisut 61070507205
 > * :woman: Ms.Thanaporn Cheentada 61070507209
-> * :man: Ms.Rungwigrai Payakkanuwat 61070507219
-> * :man: Ms.Prakasit Chaiphet 61070507230
+> * :man: Mr.Rungwigrai Payakkanuwat 61070507219
+> * :man: Mr.Prakasit Chaiphet 61070507230
 
 <img align="left" height="200" width="300" alt="" src="Conceptual design/description.png" />
 
